@@ -1,0 +1,18 @@
+body {
+  font-family: Helvetica; }
+
+#container {
+  width: 960px;
+  margin: auto;
+  text-align: center;
+  font-size: 30px; }
+
+input {
+  font-size: 30px; }
+
+select {
+  font-size: 30px; }
+
+.clear {
+  clear: both;
+  height: 15px; }
