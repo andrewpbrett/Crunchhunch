@@ -1,11 +1,9 @@
-Here's your headline:
+= "\"" + @headline.text.chomp!("\s") + "\""
 .clear
-= @headline.text
-.clear
-What's your hunch? 
+Which TechCrunch scribe wrote that headline?
 .clear
 = form_for @guess, :as => :guess, :url => { :action => :create } do |f|
 	= f.hidden_field(:headline_id, { :value => @headline.id })
 	= f.collection_select(:author_id, Author.all, :id, :name)
 	.clear
-	= f.submit "Crunch that hunch!"
+	= f.submit "Crunch your hunch!"
