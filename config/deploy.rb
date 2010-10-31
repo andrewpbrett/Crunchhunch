@@ -49,7 +49,7 @@ namespace :db do
       # over your shoulder
       prod = db["production"]["password"]
       system "mysqldump -u root -p hunchcrunch_development > ~/hunchcrunch.sql"
-      system "scp ~/andy30.sql #{user}@#{domain}:~/"
+      system "scp ~/hunchcrunch.sql #{user}@#{domain}:~/"
       run "mysql -u root -p#{prod} hunchcrunch_production < ~/hunchcrunch.sql"
     end
     desc "copy production db down to local"
