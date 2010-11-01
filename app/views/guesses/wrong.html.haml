@@ -3,6 +3,8 @@ Nooooooo! Wrong answers make Laura sad.
 .clear
 %img{ :src => "/images/laura.jpg" }
 .clear
+= render :partial => "guesses/score"
+.clear
 %a{ :href => root_path }
 	Try another one
 .clear
@@ -15,4 +17,4 @@ Nooooooo! Wrong answers make Laura sad.
 	.clear
 	#answer	
 		Are you kidding? That one is pure 
-		= @author.name	
+		= @author.name

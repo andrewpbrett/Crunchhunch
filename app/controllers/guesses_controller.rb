@@ -5,9 +5,13 @@ class GuessesController < ApplicationController
   end
   
   def create
-    # record their id (optional)
-    
     @guess = Guess.create(params[:guess])
+    
+    @member = Member.find_or_create_by_cookie_hash(cookies[:crunchhunch])
+    
+    @guess.member = @member
+    
+    @guess.save
     
     if @guess.correct?
       redirect_to right_path(:x => @guess.headline.author.id)
@@ -18,9 +22,11 @@ class GuessesController < ApplicationController
   
   def right
     @author = Author.find(params[:x])
+    @member = Member.find_by_cookie_hash(cookies[:crunchhunch])
   end
   
   def wrong
     @author = Author.find(params[:x])
+    @member = Member.find_by_cookie_hash(cookies[:crunchhunch])    
   end
 end
