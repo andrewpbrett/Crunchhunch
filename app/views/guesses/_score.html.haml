@@ -1,5 +1,6 @@
-You've gotten 
-= @member.guesses.reject { |guess| !guess.correct? }.size
-out of 
-= @member.guesses.size
-right so far. You can do better.
+-if @member
+	You've gotten 
+	= @member.guesses.reject { |guess| !guess.correct? }.size
+	out of 
+	= @member.guesses.size
+	right so far. You can do better.
