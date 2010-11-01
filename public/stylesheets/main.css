@@ -16,3 +16,6 @@ select {
 .clear {
   clear: both;
   height: 15px; }
+
+#answer {
+  display: none; }

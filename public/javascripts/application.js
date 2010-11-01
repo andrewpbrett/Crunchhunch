@@ -1,2 +1,10 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function(){
+
+});
+
+function reveal(){
+	var answer = $('#answer');
+	if (answer){
+		answer.css('display', 'block');
+	}
+}

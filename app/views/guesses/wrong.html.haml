@@ -8,3 +8,11 @@ Nooooooo! Wrong answers make Laura sad.
 .clear
 %a{ :href => "javascript:javascript:history.go(-1)" }
 	Try again
+.clear
+-if @author 
+	%a{ :href => "#", :onclick => "reveal();"}
+		Click to reveal the correct answer
+	.clear
+	#answer	
+		Are you kidding? That one is pure 
+		= @author.name	
