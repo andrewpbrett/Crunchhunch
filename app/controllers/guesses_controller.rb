@@ -1,6 +1,6 @@
 class GuessesController < ApplicationController
   def new
-    @headline = Headline.weighted
+    @headline = Headline.random
     @guess = Guess.new
   end
   
