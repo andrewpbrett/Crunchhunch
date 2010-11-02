@@ -11,4 +11,7 @@
 	%body
 		#container
 			= yield
+			.clear
+			#about
+				= link_to "About", "http://andybrett.com/crunchhunch"
 		= render :partial => "application/analytics"
