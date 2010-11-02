@@ -9,10 +9,14 @@ class Headline < ActiveRecord::Base
   end  
   
   def self.weighted(weights=nil)
-    self.all.weighted_random(:correct_guesses)
+    self.all.weighted_random(:adjusted_correct_guesses)
   end
   
   def correct_guesses
     guesses.reject { |guess| !guess.correct? }.size
+  end
+  
+  def adjusted_correct_guesses
+    0.5*correct_guesses
   end
 end
