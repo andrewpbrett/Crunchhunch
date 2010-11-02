@@ -8,15 +8,8 @@ class Headline < ActiveRecord::Base
     self.first(:offset => offset)
   end  
   
-  def self.weighted
-    # this is wildly inefficient
-    headlines = self.all
-    headlines = headlines.sort_by { |h| h.correct_guesses }
-    offset = rand(headlines.size) + headlines.size/2
-    if offset > headlines.size
-      offset = headlines.size - rand(headlines.size/10) - 1
-    end
-    headlines[offset]
+  def self.weighted(weights=nil)
+    self.all.weighted_random(:correct_guesses)
   end
   
   def correct_guesses
